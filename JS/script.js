@@ -1,7 +1,7 @@
 const box = document.querySelector(".box");
 const button = document.querySelector("button");
 const h1 = document.querySelector("h1");
-
+const cellBomb = [];
 // EVOCARE FUNZIONE
 
 button.addEventListener("click", function () {
@@ -12,6 +12,7 @@ button.addEventListener("click", function () {
 
   generator(difficulty);
   Listener(difficulty);
+  numberBomb(16);
 });
 
 // FUNZIONI
@@ -41,6 +42,20 @@ function Listener(numberofcell) {
       this.style.backgroundColor = "blue";
       console.log(this.innerHTML);
     });
+  }
+}
+
+// numberBomb(16, 1);
+// console.log(cellBomb);
+
+function numberBomb(numberRandom) {
+  // let randomNumber = Math.floor(Math.random() * (100 - 1) + 1);
+
+  while (cellBomb.length < numberRandom) {
+    let randomNumber = Math.floor(Math.random() * (100 - 1) + 1);
+    if (cellBomb.includes(randomNumber) === false) {
+      cellBomb.push(randomNumber);
+    }
   }
 }
 
