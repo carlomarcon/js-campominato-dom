@@ -18,7 +18,7 @@ button.addEventListener("click", function () {
 
   generator(difficulty);
   Listener(difficulty);
-  numberBomb(4);
+  numberBomb(16);
   console.log(cellBomb);
 });
 
@@ -59,7 +59,9 @@ function Listener(numberofcell) {
         bombClicked.length < cellBomb.length
       ) {
         this.style.backgroundColor = "blue";
-        Points.push(parseInt(this.innerHTML));
+        if (Points.includes(parseInt(this.innerHTML)) === false) {
+          Points.push(parseInt(this.innerHTML));
+        }
       } else if (
         cellBomb.includes(parseInt(this.innerHTML)) === true &&
         bombClicked.length < cellBomb.length
