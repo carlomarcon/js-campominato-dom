@@ -47,10 +47,11 @@ function Listener(numberofcell) {
 
   for (i = 0; i < numberofcell; i++) {
     cell[i].addEventListener("click", function () {
-      if (bombClicked.length === cellBomb.length - 1) {
+      if (bombClicked.length === cellBomb.length - 12) {
         for (let j = 0; j < cellBomb.length; j++) {
           cell[cellBomb[j] - 1].style.backgroundColor = "red";
         }
+
         button.addEventListener("click", function () {
           location.reload();
         });
@@ -67,11 +68,28 @@ function Listener(numberofcell) {
         bombClicked.length < cellBomb.length
       ) {
         this.style.backgroundColor = "red";
-        bombClicked.push(parseInt(this.innerHTML));
+        if (bombClicked.includes(parseInt(this.innerHTML)) === false) {
+          bombClicked.push(parseInt(this.innerHTML));
+        }
         console.log(bombClicked);
       }
       document.querySelector("h2").innerHTML =
         `Il tuo punteggio è di ` + Points.length + ` su 100.`;
+      if (bombClicked.length === cellBomb.length - 12) {
+        document.querySelector("h2").innerHTML +=
+          "  HAI PERSO ! CLICCA PER VEDERE TUTTE LE BOMBE.";
+
+        button.addEventListener("click", function () {
+          location.reload();
+        });
+      } else if (Points.length === parseInt(numberofcell) - cellBomb.length) {
+        document.querySelector("h2").innerHTML +=
+          "  HAI VINTO ! SICURAMENTE HAI BARATO..";
+        box.style.display = "none";
+        button.addEventListener("click", function () {
+          location.reload();
+        });
+      }
     });
   }
 }
