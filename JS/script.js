@@ -2,8 +2,8 @@ const box = document.querySelector(".box");
 const button = document.querySelector("button");
 const h1 = document.querySelector("h1");
 const cellBomb = [];
-const bombClicked = [];
-const Points = [];
+let bombClicked = [];
+let Points = [];
 const h2 = document.querySelector("h2");
 const Wrapper = document.querySelector(".wrapper");
 
@@ -19,12 +19,15 @@ button.addEventListener("click", function () {
   generator(difficulty);
   Listener(difficulty);
   numberBomb(16);
-  console.log(cellBomb);
+  // console.log(cellBomb);
 });
 
 // FUNZIONI
 
 function generator(numberofcell) {
+  // bombClicked = [];
+  console.log(bombClicked);
+
   let insert = "";
   let classIn = "";
   if (numberofcell === "81") {
@@ -40,6 +43,8 @@ function generator(numberofcell) {
   }
 
   box.innerHTML = insert;
+  Points = [];
+  bombClicked = [];
 }
 
 function Listener(numberofcell) {

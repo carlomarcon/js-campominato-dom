@@ -1,7 +1,14 @@
-### RACCOGLIERE RISORSE
+## Descrizione del Gioco
 
--CREARE UNA FUNZIONE DOVE LA VAR CORRISPONDE AL NUMERO DI NUMERI CASUALI DA GENERARE, RACCOGLIERLI IN UNA LISTA
--CREARE LE CONDIZIONI PER CUI SE UN NUMERO ESISTE GIA SI PASSA AL PROSSIMO
--LA LISTA DEVE ESSERE GLOBALE PER RIUTILIZZARLA NELLA FASE DOPO
+Il gioco "Nome del Gioco" è un'applicazione web sviluppata interamente utilizzando JavaScript puro. Si tratta di un gioco di [descrizione breve del gioco].
 
-<!-- SECONDA FASE -->
+## Come Giocare
+
+Per giocare, segui questi semplici passaggi:
+
+1. Apri il file `index.html` nel tuo browser web preferito.
+2. Inizia a giocare seguendo le istruzioni visualizzate nella schermata di gioco.
+
+## Come è Realizzato
+
+Il gioco è stato realizzato utilizzando solo JavaScript puro, HTML e CSS. Non sono stati utilizzati framework o librerie esterne.
